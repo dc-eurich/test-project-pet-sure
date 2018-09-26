@@ -7,6 +7,6 @@ namespace Domain.Entities
         public int Id { get; set; }
         public DateTime TransactionDate { get; set; }
         public int PetId { get; set; }
-        public bool IsValid { get; set; } //Flag to check if invoice is still valid. Will be set to false when invoice has already been used to claim.
+        public bool IsUsed { get; set; } //Flag to check if invoice is still valid. Will be set to false when invoice has already been used to claim.
     }
 }

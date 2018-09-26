@@ -20,24 +20,33 @@ namespace Services
         }
         public bool ProcessClaim(int petId, int invoiceId)
         {
+            // Validate if pet exists or is available for claim
             var pet = _petRepository.GetById(petId);
 
-            if(pet == null)
+            if(pet != null)
+            {
+                pet.IsClaimed = true;
+                _petRepository.Update(pet);
+            }
+            else
             {
                 throw new InvalidOperationException("Invalid pet for claim!");
             }
 
+            // Validate if invoice exists or is still available to be used for claim
             var invoice = _invoiceRepository.GetById(invoiceId);
 
-            if(invoice == null)
+            if(invoice != null)
+            {
+                invoice.IsUsed = false;
+                _invoiceRepository.Update(invoice);
+            }
+            else
             {
                 throw new InvalidOperationException("Invalid invoice for claim!");
             }
 
-            _claimRepository.Save(new Claim() { PetId = petId, InvoiceId = invoiceId, TransactionDate = DateTime.Now });
-
-            pet.IsClaimed = true;
-            _petRepository.Update(pet);
+            _claimRepository.Save(new Claim() { PetId = pet.Id, InvoiceId = invoiceId, TransactionDate = DateTime.Now });
 
             return true;
         }

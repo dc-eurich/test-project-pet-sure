@@ -20,11 +20,16 @@ namespace Claim.Controllers
         {
             return Ok(_claimService.Get());
         }
-
+        
         [HttpPost]
-        public IActionResult ClaimPet([FromBody] PetClaimModel petClaimModel)
+        public IActionResult ClaimPet([FromBody] IList<PetClaimModel> petClaimModels)
         {
-            var isClaimed = _claimService.ProcessClaim(petClaimModel.PetId, petClaimModel.InvoiceId);
+            // This will be refactored to be handled by batch insert
+            foreach(var petClaimModel in petClaimModels)
+            {
+                var isClaimed = _claimService.ProcessClaim(petClaimModel.PetId, petClaimModel.InvoiceId);
+            }
+
             return Ok();
         }
     }

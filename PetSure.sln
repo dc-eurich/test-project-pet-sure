@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claim", "Claim\Claim.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetManagement", "PetManagement\PetManagement.csproj", "{80938224-403B-4393-A370-3677D45E5E05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-Tests", "05-Tests\05-Tests.csproj", "{2554AC08-36CE-47BF-8BBB-727FCCA32161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{80938224-403B-4393-A370-3677D45E5E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80938224-403B-4393-A370-3677D45E5E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80938224-403B-4393-A370-3677D45E5E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2554AC08-36CE-47BF-8BBB-727FCCA32161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2554AC08-36CE-47BF-8BBB-727FCCA32161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2554AC08-36CE-47BF-8BBB-727FCCA32161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2554AC08-36CE-47BF-8BBB-727FCCA32161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

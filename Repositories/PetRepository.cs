@@ -24,7 +24,7 @@ namespace Repositories
 
         public Pet GetById(int id)
         {
-            return pets.First(p => p.Id == id);
+            return pets.Where(p => p.IsClaimed != true).First(p => p.Id == id);
         }
 
         public Pet Update(Pet pet)

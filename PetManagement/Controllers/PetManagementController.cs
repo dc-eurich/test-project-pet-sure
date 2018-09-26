@@ -3,7 +3,7 @@ using Services.Interfaces;
 
 namespace PetManagement.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pets")]
     [ApiController]
     public class PetManagementController : ControllerBase
     {

@@ -5,5 +5,6 @@ namespace Repositories.Interfaces
     public interface IInvoiceRepository
     {
         Invoice GetById(int id);
+        Invoice Update(Invoice invoice);
     }
 }
